@@ -1,0 +1,50 @@
+@define-color background #2d2d2d;
+@define-color foreground #a7a7a7;
+@define-color hover #3d3d3d;
+@define-color selected #82a966;
+@define-color warning #bc9172;
+@define-color critical #c26f76;
+@define-color border alpha(@accent, 0.7);
+@define-color accent #82a966;
+@define-color base-bg #1e1e1e;
+
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#tray {
+    color: @foreground;
+}
+
+#battery.charging, 
+#battery.plugged {
+    color: @accent;
+}
+
+#battery.warning:not(.charging) {
+    color: @warning;
+}
+
+#battery.critical:not(.charging) {
+    background-color: @critical;
+    color: @base-bg;
+    border-radius: 8px;
+}
+
+#pulseaudio.muted {
+    color: @critical;
+}
+
+#network.disconnected {
+    color: @critical;
+}
+
+tooltip {
+    background-color: @background;
+    border: 2px solid @accent;
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: @foreground;
+}
